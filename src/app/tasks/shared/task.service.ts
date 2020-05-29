@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { Http, Response } from "@angular/http";
+
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 import { Task } from "./task.model";
 
@@ -16,19 +19,13 @@ const TASKS: Array<Task> = [
 @Injectable()
 
 export class TaskService {
+  public taskUrl = "api/tasks"
 
   constructor(private http: Http) { }
 
-  public getTasks(): Promise<Task[]> {
-
-    return new Promise((resolve, reject) => {
-      if (TASKS.length > 0) {
-        resolve(TASKS);
-      } else {
-        let error_msg = "NÃO HÁ TAREFAS";
-        reject(error_msg);
-      }
-    });
+  public getTasks(): Observable<Task[]> {
+    return this.http.get(this.taskUrl)
+      .map((response: Response) => response.json().data as Task[]);
   }
 
   public getImportantTasks(): Promise<Task[]> {
