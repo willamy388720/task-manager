@@ -20,6 +20,7 @@ export class TaskService {
   constructor(private http: Http) { }
 
   public getTasks(): Promise<Task[]> {
+
     return new Promise((resolve, reject) => {
       if (TASKS.length > 0) {
         resolve(TASKS);
