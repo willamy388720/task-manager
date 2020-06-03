@@ -33,6 +33,8 @@ import "rxjs/add/operator/switchMap";
 import "rxjs/add/observable/of";
 import "rxjs/add/observable/throw";
 
+// jquery plugins
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
