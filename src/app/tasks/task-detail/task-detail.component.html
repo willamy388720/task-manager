@@ -14,7 +14,7 @@
 
     <div class="form-group col-md-3">
       <label for="done" class="control-label">Situação</label>
-      <select class="form-control" id="done" formControlNome="deadline">
+      <select class="form-control" id="done" formControlNome="done">
         <option *ngFor="let option of taskDoneOptions" value="{{ option.value }}">{{ option.text }}</option>
       </select>
     </div>
