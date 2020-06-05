@@ -49,6 +49,8 @@
           [ngClass]="formUtils.iconClassForErrorOrSuccess('passwordConfirmation')"></span>
         <div *ngIf="formUtils.showFieldError('passwordConfirmation')" class="text-danger">
           <div *ngIf="form.get('passwordConfirmation').errors.required">A Confirmação de Senha é obrigatório</div>
+          <div *ngIf="form.get('passwordConfirmation').errors.mismatch">A Confirmação de Senha deve ser igual a Senha
+          </div>
         </div>
       </div>
     </div>
