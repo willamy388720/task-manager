@@ -8,7 +8,7 @@ import { FormUtils } from "../shared/form.utils";
   template: "SIGN IN FORM"
 })
 
-export class name {
+export class SignInFormComponent {
   public form: FormGroup;
   public formUtils: FormUtils;
 
